@@ -1,0 +1,20 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: exuser
+      POSTGRES_DB: exdb
+    volumes:
+      - ./db/seed.sql:/docker-entrypoint-initdb.d/seed.sql
+  web:
+    build: .
+    command: npm start
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_USER: exuser
+      DATABASE_DB: exdb
+      DATABASE_HOST: postgres

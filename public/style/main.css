@@ -1,0 +1,32 @@
+body {
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+}
+
+.spot {
+	padding: 5px 20px;
+	margin: 2px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.spot.taken {
+	background: #d99;
+}
+
+.spot.empty {
+	background: #9d9;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.spots.disabled .spot {
+	background: #bbb;
+}
